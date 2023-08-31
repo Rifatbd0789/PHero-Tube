@@ -42,14 +42,17 @@ const Videos = async (value) => {
       newVid.classList.add("card", "bg-base-100");
       element.authors.forEach((element2) => {
         newVid.innerHTML = `
-        <div class="rounded-lg">
+        <div class="rounded-lg flex flex-col">
                 <figure>
                   <img
-                    class="max-w-lg h-72"
+                    class=" w-full lg:w-auto h-72"
                     src="${element.thumbnail}"
                     alt="Image not loaded"
                   />
-                </figure>
+                  </figure>
+                  <p class="bg-black text-white text-end w-50 absolute top-60 left-44" >${toHoursAndMinutes(
+                    element.others.posted_date
+                  )}</p>
               </div>
               <div class="card-normal p-0 flex flex-row mb-2 my-5">
                 <div class="avatar w-10 h-10 mr-3">
@@ -58,8 +61,8 @@ const Videos = async (value) => {
                   }" />
                 </div>
                 <div>
-                  <h2 class="card-title">${element?.title}</h2>
-                  <p>${element2?.profile_name}<span class="m-2" >${Verify(
+                  <h2 class="card font-bold text-xl">${element?.title}</h2>
+                  <p>${element2?.profile_name}<span class="ml-2" >${Verify(
           element2.verified
         )}</span></p>
                   <p>${element?.others.views}</p>
@@ -82,3 +85,19 @@ const Verify = (isverify) => {
 };
 Videos(1000);
 category();
+function toHoursAndMinutes(totalSeconds) {
+  if (totalSeconds === "") {
+    return "";
+  } else {
+    const totalMinutes = Math.floor(totalSeconds / 60);
+
+    const seconds = totalSeconds % 60;
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    const total =
+      hours + " hrs " + minutes + " min " + seconds + " sec " + "ago";
+    return total;
+  }
+}
+
+// console.log();
