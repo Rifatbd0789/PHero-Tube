@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PHero-Tube</title>
-</head>
-<body>
-    <header></header>
-    <main></main>
+    <!-- Tailwind and Daisy Ui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom color -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              lal: "#FF1F3D",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google-Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation and Header Part -->
+    <header class="mx-8">
+      <nav>
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <label tabindex="0" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a class="font-medium">Sort by view</a></li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost normal-case text-xl"
+              ><img src="./resources/Logo.png" alt=""
+            /></a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a class="font-medium">Sort by view</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a class="btn bg-lal text-white">Blog</a>
+          </div>
+        </div>
+      </nav>
+      <hr />
+    </header>
+    <main>
+      <!-- Category Part -->
+      <div id="category" class="flex justify-center gap-5 m-8">
+        <button class="btn bg-lal text-white">All</button>
+        <button class="btn bg-lal text-white">Music</button>
+        <button class="btn bg-lal text-white">Comedy</button>
+        <button class="btn bg-lal text-white">Drawing</button>
+      </div>
+    </main>
     <footer></footer>
     <script src="./api.js"></script>
-</body>
+  </body>
 </html>
