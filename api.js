@@ -21,6 +21,7 @@ const Videos = async (value) => {
   const data = await res.json();
   const id = data.data;
   document.getElementById("btn").classList.remove("invisible");
+  document.getElementById("btn2").classList.remove("invisible");
   /* Drawing part */
   if (value === 1005) {
     const err = document.createElement("div");
@@ -36,9 +37,11 @@ const Videos = async (value) => {
     `;
     Video.appendChild(err);
     document.getElementById("btn").classList.add("invisible");
+    document.getElementById("btn2").classList.add("invisible");
   } else {
     viewData(id);
   }
+  /* button work */
   document.getElementById("btn").addEventListener("click", function () {
     id.sort((s1, s2) => {
       s1 = parseFloat(s1.others.views);
@@ -47,8 +50,19 @@ const Videos = async (value) => {
       return s3;
     });
     viewData(id);
-    // console.log("Hi");
   });
+  // console.log("Hi");
+  /* Mobile view button work */
+  document.getElementById("btn2").addEventListener("click", function () {
+    id.sort((s1, s2) => {
+      s1 = parseFloat(s1.others.views);
+      s2 = parseFloat(s2.others.views);
+      const s3 = s2 - s1;
+      return s3;
+    });
+    viewData(id);
+  });
+  // console.log("Hi");
 };
 
 /* function to show */

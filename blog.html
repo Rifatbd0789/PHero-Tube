@@ -4,6 +4,180 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <!-- Tailwind and Daisy Ui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom color -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              lal: "#FF1F3D",
+              golapi: "#FF6B6B",
+            },
+          },
+        },
+      };
+    </script>
+    <!-- Google-Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./resources/Logo.png" type="image/x-icon" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div class="flex justify-center my-5">
+        <img src="./resources/Logo.png" alt="" />
+        <h1 class="text-3xl font-bold">Blogs</h1>
+      </div>
+    </header>
+    <main>
+      <hr />
+      <section
+        class="mx-10 mb-10 text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+      >
+        <!-- no-1 -->
+        <div class="mt-10">
+          <!-- <input type="checkbox" class="peer" /> -->
+          <div
+            class="collapse-title rounded-t-xl text-3xl text-center bg-primary text-primary-content"
+          >
+            The scope of var, let, and const
+          </div>
+          <div
+            class="text-xl bg-indigo-600 text-primary-content rounded-b-xl text-justify p-4"
+          >
+            <ol type="1">
+              <li class="text-center">
+                var declarations are globally scoped or function scoped while
+                let and const are block scoped.
+              </li>
+              <br />
+              <li>
+                <span class="bg-primary font-bold text-xl"><u>Var:</u></span>
+                The var statement declares function-scoped or globally-scoped
+                variables, optionally initializing each to a value.
+              </li>
+              <br />
+              <li>
+                To solve problems with var declarations, ES6 introduced two new
+                types of variable declarations in JavaScript, using the keywords
+                let and const
+              </li>
+              <br />
+              <li>
+                <span class="bg-primary font-bold text-xl"><u> Let:</u></span>
+                The let declarations follow the same syntax as var declarations.
+                Unlike variables declared with var, variables declared with let
+                have a block-scope. This means that the scope of let variables
+                is limited to their containing block, e.g. function, if else
+                block or loop block.
+              </li>
+              <br />
+              <li>
+                <span class="bg-primary font-bold text-xl"><u> Const:</u></span>
+                The const declaration declares block-scoped local variables. The
+                value of a constant can't be changed through reassignment using
+                the assignment operator, but if a constant is an object, its
+                properties can be added, updated, or removed.
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- no-2 -->
+        <div class="mt-10">
+          <!-- <input type="checkbox" class="peer" /> -->
+          <div
+            class="collapse-title rounded-t-xl text-3xl text-center bg-primary text-primary-content"
+          >
+            The use cases of null and undefined
+          </div>
+          <div
+            class="text-xl bg-indigo-600 text-primary-content rounded-b-xl text-justify p-4"
+          >
+            <p>The Use cases of null and undefined:</p>
+            <p>
+              <span class="bg-primary font-bold text-xl"><u>Null:</u></span>
+              Null means an empty value or a blank value. The typeof() operator
+              returns the type as an object for a variable whose value is
+              assigned as null.
+            </p>
+            <p>
+              Null is an object in JavaScript and represents primitive data
+              types. A null value in JavaScript is used for referring absence of
+              any object value and if any function or variable returns null,
+              then we can infer that the object could not be created. If we pass
+              null as the default parameter to any function type it would take
+              the 'null' as a value passed to it.
+            </p>
+            <p>
+              <span class="bg-primary font-bold text-xl"
+                ><u>Undefined:</u></span
+              >
+              Undefined is a type of Data type in JavaScript. Undefined means
+              the variable has been declared, but its value has not been
+              assigned. The typeof() operator returns undefined for an undefined
+              variable.
+            </p>
+            <p>
+              Undefined is a global read-only variable that represents the value
+              Undefined. Undefined is a type of primitive type. A method or
+              statement also returns undefined. If a variable was assigned with
+              a function that does not return any value, then the JavaScript
+              assigns an undefined value to that variable.
+            </p>
+          </div>
+        </div>
+        <!-- no-3 -->
+        <div class="mt-10">
+          <div
+            class="collapse-title rounded-t-xl text-3xl text-center bg-primary text-primary-content"
+          >
+            What do you mean by REST API?
+          </div>
+          <div
+            class="text-xl bg-indigo-600 text-primary-content rounded-b-xl text-justify p-4"
+          >
+            <p>
+              REST stands for Representational State Transfer and API stands for
+              Application Programming Interface
+            </p>
+            <br />
+            <p>
+              It is an API or application programming interface, is a set of
+              rules that define how applications or devices can connect to and
+              communicate with each other. A REST API is an API that conforms to
+              the design principles of the REST or representational state
+              transfer architectural style. For this reason, REST APIs are
+              sometimes referred to RESTful APIs.
+            </p>
+            <p>
+              REST provides a relatively high level of flexibility and freedom
+              for developers. This flexibility is just one reason why REST APIs
+              have emerged as a common method for connecting components and
+              applications in a microservices architecture. REST provides a
+              relatively high level of flexibility and freedom for developers.
+            </p>
+            <p>
+              At the most basic level, an API is a mechanism that enables an
+              application or service to access a resource within another
+              application or service. The application or service doing the
+              accessing is called the client, and the application or service
+              containing the resource is called the server.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
