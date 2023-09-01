@@ -8,12 +8,12 @@ const category = async () => {
   data.data.forEach((element) => {
     const newButton = document.createElement("div");
     newButton.innerHTML = `
-    <button onclick="Videos(${element.category_id})"e class="btn bg-lal text-white">${element.category}</button>
+    <button  onclick="Videos(${element.category_id})" class="btn text-black focus:bg-lal focus:text-white ">${element.category}</button>
     `;
     categoryField.appendChild(newButton);
   });
 };
-/* Showing Video */
+/* Video Part */
 const Videos = async (value) => {
   const res = await fetch(
     `https://openapi.programming-hero.com/api/videos/category/${value}`
@@ -65,7 +65,7 @@ const Videos = async (value) => {
   // console.log("Hi");
 };
 
-/* function to show */
+/* function to show Video */
 function viewData(idNum) {
   const Video = document.getElementById("videoContain");
   Video.textContent = "";
@@ -87,11 +87,11 @@ function viewData(idNum) {
                   element.others.posted_date
                 )}</p>
             </div>
-            <div class="card-normal p-0 flex flex-row mb-2 my-5">
+            <div class="card-normal p-0 flex flex-row mb-2 my-3">
               <div class="avatar w-10 h-10 mr-3">
                 <img class="rounded-full" src="${element2?.profile_picture}" />
               </div>
-              <div>
+              <div class="mb-5">
                 <h2 class="card font-bold text-xl">${element?.title}</h2>
                 <p>${element2?.profile_name}<span class="ml-2" >${Verify(
         element2.verified
@@ -112,7 +112,7 @@ const Verify = (isverify) => {
     return "";
   }
 };
-Videos(1000);
+Videos();
 category();
 /* converting seconds to hours minutes */
 function toHoursAndMinutes(totalSeconds) {
