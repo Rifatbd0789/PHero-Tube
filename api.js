@@ -7,8 +7,9 @@ const category = async () => {
   const categoryField = document.getElementById("categoryField");
   data.data.forEach((element) => {
     const newButton = document.createElement("div");
+    newButton.classList.add("flex", "justify-center");
     newButton.innerHTML = `
-    <button  onclick="Videos(${element.category_id})" class="btn text-black focus:bg-lal focus:text-white ">${element.category}</button>
+    <button  onclick="Videos(${element.category_id})" class="btn  text-black focus:bg-lal focus:text-white">${element.category}</button>
     `;
     categoryField.appendChild(newButton);
   });
@@ -83,7 +84,7 @@ function viewData(idNum) {
                   alt="Image not loaded"
                 />
                 </figure>
-                <p class="bg-black text-white text-xs text-end w-50 absolute top-64 left-36 rounded-lg" >${toHoursAndMinutes(
+                <p class="bg-[#ef444499] text-white text-xs text-center w-[122px] absolute top-[272px]" >${toHoursAndMinutes(
                   element.others.posted_date
                 )}</p>
             </div>
@@ -112,7 +113,7 @@ const Verify = (isverify) => {
     return "";
   }
 };
-Videos();
+Videos(1000);
 category();
 /* converting seconds to hours minutes */
 function toHoursAndMinutes(totalSeconds) {
@@ -120,12 +121,10 @@ function toHoursAndMinutes(totalSeconds) {
     return "";
   } else {
     const totalMinutes = Math.floor(totalSeconds / 60);
-
-    const seconds = totalSeconds % 60;
+    // const seconds = totalSeconds % 60;
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
-    const total =
-      hours + " hrs " + minutes + " min " + seconds + " sec " + "ago";
+    const total = hours + " hrs " + minutes + " min " + "ago";
     return total;
   }
 }
